@@ -29,10 +29,10 @@
   <table class="table table-striped">
   <tbody>
     <tr *ngFor="let product of resultsShowing" (click)="goToLink(product.link)" class="product-listing">
-      <div>{{ product.name}}</div>
-      <div>Size: {{product.size}}</div>
-      <div>Price: {{ product.price}}</div>
-      <div>In Stock: {{product.instock}}</div>
+      <div class="spec">{{ product.name}}</div>
+      <div class="spec">Size: {{product.size}}</div>
+      <div class="spec">Price: {{ product.price}}</div>
+      <div class="spec">In Stock: {{product.instock}}</div>
     </tr>
   </tbody>
 </table>
