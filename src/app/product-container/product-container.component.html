@@ -1,20 +1,41 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Size</th>
-      <th scope="col">Price</th>
-      <th scope="col">In Stock</th>
-    </tr>
-  </thead>
+<div class="desktop">
+  <table class="table table-striped desktop">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Size</th>
+        <th scope="col">Price</th>
+        <th scope="col">In Stock</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of resultsShowing| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <td class="align-middle">{{ product.name}}</td>
+        <td class="align-middle">{{ product.size}}</td>
+        <td class="align-middle">{{ product.price}}</td>
+        <td class="align-middle">{{ product.instock}}</td>
+        
+        <td>
+          <a class="btn btn-info" href="{{product.link}}">view product</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="numResults"></ngb-pagination>
+</div>
+
+<div class="mobile">
+  <table class="table table-striped">
   <tbody>
-    <tr *ngFor="let product of resultsShowing| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      <td >{{ product.name}}</td>
-      <td >{{ product.size}}</td>
-      <td >{{ product.price}}</td>
-      <td >{{ product.instock}}</td>
+    <tr *ngFor="let product of resultsShowing" (click)="goToLink(product.link)" class="product-listing">
+      <div>{{ product.name}}</div>
+      <div>Size: {{product.size}}</div>
+      <div>Price: {{ product.price}}</div>
+      <div>In Stock: {{product.instock}}</div>
     </tr>
   </tbody>
 </table>
+</div>
 
-<ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="numResults"></ngb-pagination>
+

@@ -11,7 +11,7 @@ export class ProductContainerComponent implements OnInit, OnChanges{
   potomacProducts: ProductListing[];
   resultsShowing: ProductListing[];
   page: number = 1;
-  pageSize: number = 10;
+  pageSize: number = 20;
   numResults: number = 0;
   @Input() search: string='';
 
@@ -43,6 +43,10 @@ export class ProductContainerComponent implements OnInit, OnChanges{
       }
     });
     this.numResults = this.resultsShowing.length;
+  }
+
+  goToLink(mylink){
+    window.open(mylink, "_self");
   }
 
   ngOnChanges(){

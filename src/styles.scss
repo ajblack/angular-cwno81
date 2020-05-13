@@ -1,0 +1,26 @@
+/* Add application styles & imports to this file! */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+$breakpoint-tablet: 750px;
+
+
+.mobile{
+  display:none;
+}
+
+
+
+@media(max-width: $breakpoint-tablet){
+  .desktop{
+    display:none;
+  }
+
+  .mobile{
+    display: block;
+
+    .product-listing{
+      cursor: pointer;
+    }
+  }
+}
+
