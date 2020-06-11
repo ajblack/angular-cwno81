@@ -33,7 +33,6 @@ export class ProductContainerComponent implements OnInit, OnChanges{
 
   filterProducts(){
     this.resultsShowing = [];
-    console.log("this search is: "+this.search);
     this.resultsShowing = this.potomacProducts.filter((product)=>{
       if(product.name.toLowerCase().includes(this.search.toLowerCase())){
         return true;

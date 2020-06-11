@@ -21,7 +21,8 @@ import {
 } from '@angular/platform-browser-dynamic/testing';
  
 // stuff to test
-import './app/product-searchbar/product-searchbar.spec.ts'
+import './app/app.component.spec.ts';
+import './app/product-searchbar/product-searchbar.spec.ts';
 
 jasmine.getEnv().configure({random: false});
 bootstrap();

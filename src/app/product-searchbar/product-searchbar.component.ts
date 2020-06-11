@@ -17,7 +17,6 @@ export class ProductSearchbarComponent implements OnInit {
   }
 
   onSearchChange(){
-    console.log("search is now: "+this.searchText);
     this.change.emit(this.searchText);
   }
 
