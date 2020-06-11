@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement }  from '@angular/core';
-import { ProductSearchbarComponent } from './product-searchbar/product-searchbar.component';
+import { ProductSearchbarComponent } from './product-searchbar.component';
 import { FormsModule } from '@angular/forms';
 
 //
