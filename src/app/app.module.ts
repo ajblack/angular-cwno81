@@ -11,10 +11,11 @@ import { ProductSearchbarComponent } from './product-searchbar/product-searchbar
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 import {AppRoutingModule} from './app-routing.module';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, NgbModule,AppRoutingModule],
-  declarations: [ AppComponent, ProductContainerComponent, ProductSearchbarComponent, ProductDetailsComponent ],
+  declarations: [ AppComponent, ProductContainerComponent, ProductSearchbarComponent, ProductDetailsComponent, HomepageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
