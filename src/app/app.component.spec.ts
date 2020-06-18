@@ -40,14 +40,12 @@ describe("App Component Tests",() =>{
     de = fixture.debugElement;
   });
 
-  it("should run a test",()=>{
-    expect("here").toEqual("here")
-  });
-
   it("should update base search text when searchbar updates",()=>{
     fixture.detectChanges();
-    const searchBar = de.query(By.css('input')).nativeElement;
-    de.query(By.css('input')).componentInstance.change.emit("Test String");
+
+    // Find the element with a seachbar(ProductSearchbarComponent
+    const searchBarDebugElement = de.query(By.css('input'));
+    searchBarDebugElement.componentInstance.change.emit("Test String");
 
     fixture.detectChanges();
     expect(component.currentSearch).toEqual("Test String");

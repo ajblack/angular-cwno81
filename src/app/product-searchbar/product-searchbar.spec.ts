@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 //
 
-describe('Integration::ProductSearchbarComponent', () => {
+describe('ProductSearchbar Component Tests', () => {
 
   beforeEach(async() =>{
     TestBed.configureTestingModule({

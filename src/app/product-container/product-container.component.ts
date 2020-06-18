@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter, OnChanges } from '@angular/core';
 import { ProductService } from '../product.service';
 import {ProductListing } from '../store-listing-interfaces';
+import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-container',
@@ -14,6 +15,7 @@ export class ProductContainerComponent implements OnInit, OnChanges{
   pageSize: number = 20;
   numResults: number = 0;
   @Input() search: string='';
+  @Output('buy-product') buyProduct:EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private productService: ProductService) {
    }
@@ -52,6 +54,11 @@ export class ProductContainerComponent implements OnInit, OnChanges{
     if(this.potomacProducts){
       this.filterProducts();
     }
+  }
+
+  buyClick(){
+    console.log('buy button clicked in product container');
+    this.buyProduct.emit("buy this product from product container");
   }
 
 }

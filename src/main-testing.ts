@@ -23,6 +23,7 @@ import {
 // stuff to test
 import './app/app.component.spec.ts';
 import './app/product-searchbar/product-searchbar.spec.ts';
+import './app/product-container/product-container.spec.ts';
 
 jasmine.getEnv().configure({random: false});
 bootstrap();

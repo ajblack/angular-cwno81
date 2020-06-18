@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -9,6 +9,7 @@ export class AppComponent  {
   name = 'Angular';
   iscalled = false;
   currentSearch: string ='';
+  @Input() buyProduct : string='';
 
   constructor() { }
 
@@ -20,4 +21,10 @@ export class AppComponent  {
     this.currentSearch = event;
     this.iscalled = true;
   }
+
+  bP(event){
+    
+    console.log("buying "+event+ "from app component");
+  }
+
 }

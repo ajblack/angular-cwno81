@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { ProductContainerComponent } from './product-container/product-container.component';
 import { ProductService } from './product.service';
 import { ProductSearchbarComponent } from './product-searchbar/product-searchbar.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, NgbModule],
-  declarations: [ AppComponent, ProductContainerComponent, ProductSearchbarComponent ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, NgbModule,AppRoutingModule],
+  declarations: [ AppComponent, ProductContainerComponent, ProductSearchbarComponent, ProductDetailsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
