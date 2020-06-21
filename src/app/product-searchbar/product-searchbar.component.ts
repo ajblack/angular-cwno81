@@ -1,15 +1,26 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-product-searchbar',
   templateUrl: './product-searchbar.component.html',
   styleUrls: ['./product-searchbar.component.css']
 })
-export class ProductSearchbarComponent implements OnInit {
-  searchText: string;
+export class ProductSearchbarComponent implements OnInit, OnChanges {
+  searchText: string='';
   @Output('update') change: EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+    console.log('on init called');
+  }
+
+  ngDoCheck(){
+    console.log('do check called');
+  }
+
+// Called whenever and data-bound input property changes
+  ngOnChanges(){
+    console.log('on changes called');
+    this.change.emit(this.searchText);
   }
 
   ngAfterContentChecked(){
@@ -19,5 +30,12 @@ export class ProductSearchbarComponent implements OnInit {
   onSearchChange(){
     this.change.emit(this.searchText);
   }
+
+  onSearchChangeTest(val){
+    console.log("value is: "+val);
+    this.searchText = val;
+    this.change.emit(val);
+  }
+
 
 }

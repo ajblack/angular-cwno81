@@ -29,7 +29,7 @@ export class ProductContainerComponent implements OnInit, OnChanges{
         this.numResults = this.potomacProducts.length;
       },
       (err) => console.log(err),
-      () => console.log("done"));
+      () => console.log("gathering data complete"));
       
   }
 
@@ -51,6 +51,7 @@ export class ProductContainerComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(){
+    console.log('onchanges called by product container');
     if(this.potomacProducts){
       this.filterProducts();
     }
